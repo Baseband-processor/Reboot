@@ -10,6 +10,13 @@ no strict 'subs';
 use warnings;
 use ExtUtils::MakeMaker;
 
+use File::SearchPath qw/ searchpath /;
+
+my $interested_H = searchpath( "reboot.h" );
+
+if( undef( $interested_H ) ){
+  die("reboot.h is not avaiable in your system!\n");
+}
 
 WriteMakefile(
    NAME => 'Reboot',
