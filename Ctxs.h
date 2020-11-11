@@ -12,6 +12,10 @@
   #include <linux/kernel.h>
 #endif
 
+#ifndef _LINUX_KMSG_DUMP_H
+  #include <kmsg_dump.h>
+#endif
+
 #include "ppport.h"
 
 #endif /* __CTXS_H */
