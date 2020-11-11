@@ -8,4 +8,5 @@ Reboot.xs
 ppport.h
 typemap
 examples/reboot_computer.pl
+LICENSE
 README.md
