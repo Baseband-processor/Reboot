@@ -191,6 +191,14 @@ typedef enum cpuhp_state {
 MODULE = Reboot		PACKAGE = Reboot
 
 void 
+device_shutdown()
+
+
+void 
+kernel_restart_prepare(cmd)
+	char *cmd
+	
+void 
 kernel_restart(cmd)
   char *cmd
 CODE:
