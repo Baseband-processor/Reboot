@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
+#include <stdbool.h> 
 
 #ifdef _DEVICE_H_
   #include <linux/device.h>
