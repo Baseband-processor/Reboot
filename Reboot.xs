@@ -250,3 +250,62 @@ CODE:
 	cpu_maps_update_done();
 	return err;
 
+#define HZ		1024
+#define DIV_ROUND_UP(n, d) (((n) + (d) - 1) / (d))
+
+#define READ_ONCE(x)							\
+({									\
+	compiletime_assert_rwonce_type(x);				\
+	__READ_ONCE(x);							\
+})
+
+#define atomic_read(v)		READ_ONCE((v)->counter)
+
+void
+__delay()
+	int loops
+CODE:
+	int tmp;
+	__asm__ __volatile__(
+		"	rpcc %0\n"
+		"	addl %1,%0,%1\n"
+		"1:	rpcc %0\n"
+		"	subl %1,%0,%0\n"
+		"	bgt %0,1b"
+		: "=&r" (tmp), "=r" (loops) : "1"(loops));
+
+
+void
+_udelay()
+	unsigned long usecs	
+CODE:
+	usecs *= (((unsigned long)HZ << 32) / 1000000) * LPJ;
+	__delay((long)usecs >> 32);
+
+
+int 
+cpu_wait_death(cpu, seconds)
+	unsigned int cpu
+	int seconds
+CODE:
+	int jf_left = seconds * HZ;
+	int oldstate;
+	bool ret = true;
+	int sleep_jf = 1;
+
+	might_sleep();
+
+	/* The outgoing CPU will normally get done quite quickly. */
+	if (atomic_read(&per_cpu(cpu_hotplug_state, cpu)) == CPU_DEAD){
+		goto update_state;
+	}
+	_udelay(5);
+
+	/* But if the outgoing CPU dawdles, wait increasingly long times. */
+	while (atomic_read(&per_cpu(cpu_hotplug_state, cpu)) != CPU_DEAD) {
+		schedule_timeout_uninterruptible(sleep_jf);
+		jf_left -= sleep_jf;
+		if (jf_left <= 0){
+			break;
+		}
+		sleep_jf = DIV_ROUND_UP(sleep_jf * 11, 10);
