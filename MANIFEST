@@ -7,3 +7,4 @@ Makefile.PL
 Reboot.xs
 ppport.h
 typemap
+examples/reboot_computer.pl
