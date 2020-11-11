@@ -10,13 +10,13 @@ no strict 'subs';
 use warnings;
 use ExtUtils::MakeMaker;
 
-use File::SearchPath qw/ searchpath /;
+use File::SearchPath qw( searchpath );
 
-my $interested_H = searchpath( "reboot.h" );
-
-if( undef( $interested_H ) ){
-  die("reboot.h is not avaiable in your system!\n");
+foreach( qw( reboot.h kmsg_dump.h device.h ) ){
+  if( ! searchpath($_) ){
+      die("reboot.h is not avaiable in your system!\n");
 }
+  }
 
 WriteMakefile(
    NAME => 'Reboot',
@@ -27,7 +27,7 @@ WriteMakefile(
    'OPTIMIZE' => '-O1', 
    DEFINE => '',
    VERSION_FROM => 'lib/Reboot.pm',
-   LIBS => ['-L/lib -L/usr/lib -L/usr/local/lib '],
+   LIBS => ['-L/lib -L/usr/lib -L/usr/local/lib -L/usr/include/linux'],
    INC => '-I/include -I/usr/include -I/usr/local/include',
    PREREQ_PM => {
      
