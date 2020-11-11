@@ -1,6 +1,8 @@
 Reboot
 =======================================================================================================
 
+![image of linux_boot](./linux-shutdown-command.jpg)
+
 **WHO I AM?**
 
 Click [Here](https://github.com/Baseband-processor/Baseband-processor)
