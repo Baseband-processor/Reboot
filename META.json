@@ -1,0 +1,41 @@
+{
+   "abstract" : "Reboot is a perl low level library which permits to rebootyour computer in several ways [UNIX ONLY]",
+   "author" : [
+      "Edoardo Mantovani aka Baseband <Baseband@cpan.org>"
+   ],
+   "dynamic_config" : 1,
+   "generated_by" : "ExtUtils::MakeMaker version 6.98, CPAN::Meta::Converter version 2.143240",
+   "license" : [
+      "BSD2"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Reboot",
+   "no_index" : {
+      "directory" : [
+         "t",
+         "inc"
+      ]
+   },
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "File::SearchPath" : "0"
+            "ExtUtils::MakeMaker" : "0"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "0"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+         }
+      }
+   },
+   "release_status" : "stable",
+   "version" : "1.00"
+}
