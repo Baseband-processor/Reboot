@@ -8,12 +8,16 @@
 #include "perl.h"
 #include "XSUB.h"
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+
 #ifdef _UAPI_LINUX_REBOOT_H
   #include <linux/kernel.h>
 #endif
 
 #ifndef _LINUX_KMSG_DUMP_H
-  #include <kmsg_dump.h>
+  #include <linux/kmsg_dump.h>
 #endif
 
 #include "ppport.h"
