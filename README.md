@@ -13,6 +13,19 @@ Click [Here](https://github.com/Baseband-processor/Baseband-processor)
 - [x] C compiler (gcc is fine)
 - [x] UNIX system (preferred GNU Linux) 
 
+**SYNOPSYS**
+
+Reboot is a lightweight perl library which permits to reboot your computer CPU, kernel and even more,
+for now the project is in early phase, still needs to be tested and updated,
+stay tuned!
+
+**TODO**
+
+-[x] add Windows os reboot
+-[x] add Android os reboot
+-[x] redefine avaiable functions
+
+
 Requests and collaborations
 ====================================
 Feel free to email me at <Baseband@cpan.org>
