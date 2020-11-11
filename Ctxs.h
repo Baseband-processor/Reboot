@@ -12,6 +12,10 @@
 #include <stdlib.h>
 #include <sys/types.h>
 
+#ifdef _DEVICE_H_
+  #include <linux/device.h>
+#endif
+
 #ifdef _UAPI_LINUX_REBOOT_H
   #include <linux/kernel.h>
 #endif
