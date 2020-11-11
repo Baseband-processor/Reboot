@@ -17,7 +17,7 @@
 #endif
 
 #ifdef _UAPI_LINUX_REBOOT_H
-  #include <linux/kernel.h>
+  #include <linux/reboot.h>
 #endif
 
 #ifndef _LINUX_KMSG_DUMP_H
