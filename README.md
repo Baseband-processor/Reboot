@@ -21,9 +21,9 @@ stay tuned!
 
 **TODO**
 
--[x] add Windows os reboot
--[x] add Android os reboot
--[x] redefine avaiable functions
+- [x] add Windows os reboot
+- [x] add Android os reboot
+- [x] redefine avaiable functions
 
 
 Requests and collaborations
