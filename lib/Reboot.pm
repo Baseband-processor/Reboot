@@ -44,7 +44,12 @@ our %EXPORT_TAGS = (
 
   )],
   boot_funct => [qw(
-  
+    kernel_restart_prepare
+    kernel_restart
+    soft_restart
+    cpu_down
+    cpu_wait_death
+    
   
   
   )],
