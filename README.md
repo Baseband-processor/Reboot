@@ -65,4 +65,4 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE._
 
-<img src="https://cdn.pling.com/img/9/1/7/c/93cbd68c090416ae01c9a22565e36182ff7a.gif" alt="drawing"  width="1500" height="250"/>
+<img src="https://media.giphy.com/media/cHLLRNVaqALxCv1Kgb/giphy.gif" alt="drawing" width="2000"/>
